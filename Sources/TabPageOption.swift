@@ -32,6 +32,7 @@ public struct TabPageOption {
     public var hidesTopViewOnSwipeType: HidesTopContentsOnSwipeType = .none
     public var navigationBar: UINavigationBar = UINavigationBar()
     public var navItem: UINavigationItem = UINavigationItem()
+    public var embedInNavBar: Bool = false
 
     internal var tabBarAlpha: CGFloat {
         return isTranslucent ? 0.95 : 1.0

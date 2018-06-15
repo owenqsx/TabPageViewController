@@ -131,9 +131,14 @@ extension TabPageViewController {
      */
 
     fileprivate func updateNavigationBar() {
+        if(option.embedInNavBar) {
+            option.navItem.titleView?.addSubview(tabView)
+        } else {
+            view.addSubview(tabView)
+        }
         view.addSubview(option.navigationBar)
         option.navigationBar.items = [option.navItem]
-        
+
 //        if let navigationBar = navigationController?.navigationBar {
 //            navigationBar.shadowImage = UIImage()
 //            navigationBar.setBackgroundImage(option.tabBackgroundImage, for: .default)
@@ -153,7 +158,7 @@ extension TabPageViewController {
                                         multiplier: 1.0,
                                         constant: option.tabHeight)
         tabView.addConstraint(height)
-        view.addSubview(tabView)
+
 
         let top = NSLayoutConstraint(item: tabView,
                                      attribute: .top,
