@@ -31,8 +31,6 @@ open class TabPageViewController: UIPageViewController {
     fileprivate var statusView: UIView?
     fileprivate var statusViewHeightConstraint: NSLayoutConstraint?
     fileprivate var tabBarTopConstraint: NSLayoutConstraint?
-    var navigationBar = UINavigationBar()
-    var navItem = UINavigationItem()
 
     public init() {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
@@ -133,8 +131,8 @@ extension TabPageViewController {
      */
 
     fileprivate func updateNavigationBar() {
-        view.addSubview(navigationBar)
-        navigationBar.items = [navItem]
+        view.addSubview(option.navigationBar)
+        option.navigationBar.items = [option.navItem]
         
 //        if let navigationBar = navigationController?.navigationBar {
 //            navigationBar.shadowImage = UIImage()
