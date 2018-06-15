@@ -149,6 +149,7 @@ extension TabPageViewController {
 
         if(option.embedInNavBar) {
             option.navItem.titleView = tabView
+            return tabView
         } else {
             view.addSubview(tabView)
         }
